@@ -1,0 +1,45 @@
+
+    .backgroundImage{
+        position: absolute;
+        height: 140vh;
+        width: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,0.6));
+        top: 0;
+        filter: brightness(0.7);
+        img{
+            object-fit: cover;
+            z-index: -1;
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,0.6));
+            
+        }
+    }
+    
+    .introContainer{
+        margin-top: 35vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        flex-direction: column;
+        left: 50%;
+        transform: translateX(-50%);
+        .introImage{
+
+            width: 863px;
+            height: 206px;
+        img{
+            object-fit: cover;
+            object-position: top;
+        }   
+        }
+        h1{
+
+            z-index: 3;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: whitesmoke;
+            text-align: center;
+            font-family: 'Bookmania', serif;
+        }
+    }
+
