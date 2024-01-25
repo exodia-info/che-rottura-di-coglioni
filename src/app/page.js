@@ -2,7 +2,7 @@
 
 import styles from "./page.module.scss";
 import { useEffect } from "react";
-import Intro from "./components/intro";
+import Intro from "./components/Intro";
 import Description from "./components/Description";
 import Projects from "./components/Projects";
 
