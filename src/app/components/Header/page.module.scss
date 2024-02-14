@@ -1,0 +1,128 @@
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+    .container{
+    position: fixed;
+    top: 30px;
+    color: white;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(
+        135deg,
+        rgba(233, 232, 215, 0.5),
+                rgba(233, 232, 215, 0.8)
+      );
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #7B523F;
+
+    border-radius: .8em;
+    max-width: 90vw;
+    
+    .logoContainer{
+        display: flex;
+        align-items: center;
+        background: rgb(0, 0, 0, 0.125 );
+        opacity: 0.6;
+        padding: 0 35px;
+        border-radius: .7em;
+
+        &:hover{
+            opacity: 1;
+            transition: all 0.5s cubic-bezier(0.75, 0, 0.165, 1);
+        }
+    
+    .logo{
+        display: flex;
+        align-items: center;
+
+        p, a{
+            text-decoration: none;
+            margin: 0;
+            transition: all 0.5s cubic-bezier(0.75, 0, 0.165, 1);
+        }
+
+        .copyright{
+            color: #121212;       
+            transition: all 0.3s cubic-bezier(0.75, 0, 0.165, 1);     
+
+        }
+        .name{
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.75, 0, 0.165, 1);
+            .sitoSugo{
+                padding-left: 0.3em;
+                color: rgb(30 41 59 );            
+
+                
+            }
+            .Mauro{
+                position: absolute;
+                left: 95px;
+                padding-left: 0.3em;
+            }
+        }
+        &:hover{
+            .copyright{
+                color: white;
+            }
+            .name{
+                padding-left: 60px;
+
+                .sitoSugo{
+                    transform: translateX(-160px);
+                }
+                .Mauro{
+                    transform: translateX(-95px);
+                }
+            }
+        }
+    }
+}
+
+    .nav{
+        display: flex;
+        .el{
+            display: flex;
+            position: relative;
+            padding: 15px;
+            text-decoration: none;
+
+            .link{
+                text-decoration: none;
+                color: #121212;            
+            }
+            .indicator{
+                width: 6px;
+                height: 6px;
+                background-color: #121212;
+                position: absolute;
+                border-radius: 50%;
+                top: 80%;
+                left: 50%;
+                transform: scale(0) translateX(-50%);
+                transition: transform 0.2 cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            &:hover{
+                .indicator{
+                    transform: scale(1) translateX(-50%);
+                    transition: all 0.2 cubic-bezier(0.075, 0.82, 0.165, 1);       
+                }
+            }
+        }
+    }
+}
+}

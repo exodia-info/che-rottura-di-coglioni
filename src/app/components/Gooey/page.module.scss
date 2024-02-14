@@ -1,0 +1,27 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    svg{
+        width: 500px;
+        filter: url('#filter');
+
+        path{
+            display: none;
+        }
+
+        g{
+            display: flex;
+            min-height: 50px;
+            min-width: 50px;
+            circle{
+                height: 50px;
+                width: 50px;
+                fill: chocolate;
+            }
+        }
+        
+    }
+}

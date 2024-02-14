@@ -10,50 +10,120 @@
     height: 700px;
     justify-content: space-between;
     gap: 5%;
+
+
 }
 
 .imageContainer{
+        position: relative;
+        .content{
+            position: absolute;
+            top: 0;
+            height: 33vw;
+            width: 44vw;
+            border: 3px solid #7B523F;
+            border-radius: 4px;
+
+        }
+}
+
+.imageContainer2{
     position: relative;
-    height: 100%;
-    width: 40%;
-    transition: transform 0.5s ease-in-out;
+    .content{
+        position: absolute;
+        top: 320px;
+        height: 33vw;
+        width: 44vw;
+        z-index: 3;
+        img{
+            object-fit: cover;
+            opacity: 1;
+            transition: all 0.4s;
+        }
+    }
+
 }
 
 .imageContainer img{
     object-fit: cover;
+    opacity: 1;
+    transition: all 0.4s;
+    height: 33vw;
+    width: 44vw;
 }
 
-.column{
+.cassaScrotaleContainer{
     display: flex;
-    height: 100%;
-    width: 20%;
-    font-size: 1.6vw;
+    flex-direction: column;
+   align-items: flex-end;
+
+    .column{
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        width: 33%;
+        font-size: 1.8vw;
+        font-weight: 700;
+        color: #583f32;
+        font-family: 'bookmania', serif;
+    }
+    
+    .column:last-of-type{
+        align-items: flex-end;
+        font-weight: 400;
+        font-size: 1.2vw;
+        width: 30%;
+        color: #121212;
+        font-weight: 400;
+        font-family: 'Monarcha', serif;
+    }
+
 }
 
-.column:last-of-type{
-    align-items: flex-end;
-    font-size: 1vw;
-}
+
 
 .projectList{
     display: flex;
     flex-direction: column;
     position: relative;
     margin-top: 200px;
+    background-color: transparent;
+    transition: all 0.2s;
+    z-index: 0;
+    cursor: pointer;
+
+    h2 {
+        font-size: 45px;
+        margin: 0px;
+        font-weight: 400;
+        transition: all 0.4s;
+    }
+    
+
 }
 
 .projectEl{
-    width: 100%;
-    color: white;
-    text-transform: uppercase;
-    font-size: 3vw;
-    border-bottom: 1px solid white;
     display: flex;
+    width: 100%;
+    color: #583f32;
+    font-size: 3vw;
+
     justify-content: flex-end;
+
+    font-family: 'monarcha', serif;
+    cursor: pointer;
+    
+    &:hover {
+        opacity: 0.5;
+
+        h2 {
+            transform: translateX(10px);
+
+        }
+    }
 }
 .projectEl h2{
     margin: 0px;
     margin-top: 40px;
     margin-bottom: 20px;
-    cursor: default;
 }

@@ -1,3 +1,43 @@
+.logo{
+    display: flex;
+    align-items: center;
+    color: rgb(30 41 59 );            
+
+    p, a{
+        text-decoration: none;
+        margin: 0;
+        transition: all 0.5s cubic-bezier(0.75, 0, 0.165, 1);
+    }
+    .name{
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        transition: all 0.5s cubic-bezier(0.75, 0, 0.165, 1);
+        .sitoSugo{
+            padding-left: 0.3em;
+
+        }
+        .Mauro{
+            position: absolute;
+            left: 95px;
+            padding-left: 0.3em;
+        }
+    }
+    &:hover{
+        .name{
+            padding-left: 60px;
+            .sitoSugo{
+                transform: translateX(-160px);
+            }
+            .Mauro{
+                transform: translateX(-95px);
+            }
+        }
+    }
+}
+
+
 
     .backgroundImage{
         position: absolute;
@@ -5,6 +45,7 @@
         width: 100%;
         background: linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,0.6));
         top: 0;
+        border-bottom: 4px solid #7B523F;
         filter: brightness(0.7);
         img{
             object-fit: cover;

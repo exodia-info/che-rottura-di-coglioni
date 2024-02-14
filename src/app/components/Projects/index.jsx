@@ -3,23 +3,25 @@ import styles from "./style.module.scss";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScroll, useTransform, motion } from "framer-motion";
+import Header from "../Header";
 
 const projects = [
   {
     title: "Salar de Atacama",
-    src: "1.png",
+    src: "casa2.jpg",
   },
   {
     title: "Valle de la luna",
-    src: "2.JPG",
+    src: "casa1.jpg",
   },
   {
     title: "Miscanti Lake",
-    src: "3.JPG",
+    src: "casa3.jpg",
   },
   {
     title: "Miniques Lagoons",
-    src: "4.png",
+    src: "casa4.jpg",
   },
 ];
 
@@ -27,62 +29,123 @@ export default function Index() {
   const [selectedProject, setSelectedProject] = useState(0);
   const container = useRef(null);
   const imageContainer = useRef(null);
+  const elleContainer = useRef(null);
+  const headerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  });
+
+  const elle = useTransform(scrollYProgress, [0, 1], [+600, +200]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.create({
-      trigger: imageContainer.current,
-      ease: "none",
-      pin: true,
-      start: "top-=100px",
-      end: "+=400px",
+    const context = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: imageContainer.current,
+        pin: true,
+        start: "top-=140 top",
+        end: "bottom+=180 top",
+        scrub: true,
+      });
+      ScrollTrigger.create({
+        trigger: container.current,
+        start: "top top",
+        end: "top+=100 top",
+        scrub: true,
+      });
     });
-  }, []);
+
+    gsap.fromTo(
+      headerRef.current,
+      {
+        opacity: 0, // Start fully transparent (not visible)
+      },
+      {
+        opacity: 1, // Animate to fully visible
+        duration: 2, // Adjust duration as needed
+        ease: "power3.inOut", // Adjust easing as needed
+        scrollTrigger: {
+          trigger: container.current, // Element triggering the animation
+          start: "top top", // Animation starts when element hits top center
+          end: "top+=140 top", // Animation ends when element is 140px below top center
+          scrub: true, // Link animation progress to scroll position
+          markers: true, // Display visual markers for debugging
+        },
+      }
+    );
+
+    console.log("headerRef", headerRef.current);
+
+    return () => {
+      context.revert();
+    };
+  }, [headerRef]);
 
   return (
-    <div ref={container} className={styles.projects}>
-      <div className={styles.projectDescription}>
-        <div ref={imageContainer} className={styles.imageContainer}>
-          <Image
-            src={`/images/${projects[selectedProject].src}`}
-            fill={true}
-            alt="project image"
-            priority={true}
-          />
-        </div>
-        <div className={styles.column}>
-          <p>
-            The flora is characterized by the presence of high elevation
-            wetland, as well as yellow straw, broom sedge, tola de agua and tola
-            amaia.
-          </p>
-        </div>
-        <div className={styles.column}>
-          <p>
-            Some, like the southern viscacha, vicuña and Darwins rhea, are
-            classified as endangered species. Others, such as Andean goose,
-            horned coot, Andean gull, puna tinamou and the three flamingo
-            species inhabiting in Chile (Andean flamingo, Chilean flamingo, and
-            Jamess flamingo) are considered vulnerable.
-          </p>
-        </div>
-      </div>
-
-      <div className={styles.projectList}>
-        {projects.map((project, index) => {
-          return (
-            <div
-              key={index}
-              onMouseOver={() => {
-                setSelectedProject(index);
-              }}
-              className={styles.projectEl}
-            >
-              <h2>{project.title}</h2>
+    <>
+      <Header ref={headerRef} />
+      <div ref={container} className={styles.projects}>
+        <div className={styles.projectDescription}>
+          {" "}
+          <div ref={imageContainer} className={styles.imageContainer}>
+            <div className={styles.content}>
+              <Image
+                src={`/images/${projects[selectedProject].src}`}
+                fill={true}
+                alt="project image"
+                priority={true}
+              />
             </div>
-          );
-        })}
+          </div>
+          <div className={styles.cassaScrotaleContainer}>
+            <div className={styles.column}>
+              <h1>
+                The flora is characterized by the presence of high elevation
+                wetland, si ok un po meno
+              </h1>
+            </div>
+            <div className={styles.column}>
+              <p>
+                Some, like the southern viscacha, vicuña and Darwins rhea, are
+                classified as endangered species. Others, such as Andean goose,
+                horned coot, Andean gull, puna tinamou and the three flamingo
+                species inhabiting in Chile (Andean flamingo, Chilean flamingo,
+                and Jamess flamingo) are considered vulnerable.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.imageContainer2}>
+          <div className={styles.content}>
+            <Image
+              src={`/images/cornice1.png`}
+              fill={true}
+              alt="project image"
+              priority={true}
+            />
+          </div>
+        </div>
+        <motion.div
+          style={{ top: elle }}
+          ref={elleContainer}
+          className={styles.projectList}
+        >
+          {projects.map((project, index) => {
+            return (
+              <div
+                key={index}
+                onMouseOver={() => {
+                  setSelectedProject(index);
+                }}
+                className={styles.projectEl}
+              >
+                <h2>{project.title}</h2>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
-    </div>
+    </>
   );
 }

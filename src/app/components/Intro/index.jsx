@@ -22,9 +22,23 @@ export default function Intro() {
 
     tl.fromTo(
       backgroundImage.current,
-      { clipPath: "inset(15%)", filter: "brightness(0.6)" },
-      { duration: 1, clipPath: "inset(0%)", filter: "brightness(1)" }
+      {
+        clipPath: "inset(15%)",
+        filter: "brightness(0.6)",
+      },
+      {
+        duration: 1,
+        clipPath: "inset(0%)",
+        filter: "brightness(1)",
+      }
     )
+      .to(
+        document.body,
+        {
+          duration: 0.5,
+        },
+        0
+      )
       .to(
         introImage.current,
         { y: "-50%", scale: 3.5, clipPath: "inset(50%)", duration: 1 },
@@ -52,7 +66,7 @@ export default function Intro() {
           <Image src="/images/logus.png" alt="logus" fill="true" />
         </div>
         <h1 ref={introTxt} data-scroll data-scroll-speed="0.7">
-          Wij zijn een creatief bureau
+          Wij ii een creatief bureau
         </h1>
       </div>
     </section>
