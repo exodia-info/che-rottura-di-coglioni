@@ -36,7 +36,7 @@ export default function Index() {
     offset: ["start end", "end start"],
   });
 
-  const elle = useTransform(scrollYProgress, [0, 1], [+600, +200]);
+  const elle = useTransform(scrollYProgress, [0, 1], [+400, +50]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -56,24 +56,32 @@ export default function Index() {
       });
     });
 
-    gsap.fromTo(
-      headerRef.current,
-      {
-        opacity: 0, // Start fully transparent (not visible)
+    gsap.to(headerRef.current, {
+      opacity: 1, // Animate to fully visible
+      duration: 2, // Adjust duration as needed
+      ease: "power3.inOut", // Adjust easing as needed
+
+      scrollTrigger: {
+        trigger: container.current, // Element triggering the animation
+        start: "top top", // Animation starts when element hits top center
+        end: "top+=140 top", // Animation ends when element is 140px below top center
+        scrub: true, // Link animation progress to scroll position
+        markers: false, // Display visual markers for debugging
       },
-      {
-        opacity: 1, // Animate to fully visible
-        duration: 2, // Adjust duration as needed
-        ease: "power3.inOut", // Adjust easing as needed
-        scrollTrigger: {
-          trigger: container.current, // Element triggering the animation
-          start: "top top", // Animation starts when element hits top center
-          end: "top+=140 top", // Animation ends when element is 140px below top center
-          scrub: true, // Link animation progress to scroll position
-          markers: true, // Display visual markers for debugging
-        },
-      }
-    );
+    });
+    gsap.to(headerRef.current, {
+      opacity: 0, // Animate to fully visible
+      duration: 2, // Adjust duration as needed
+
+      ease: "power3.inOut", // Adjust easing as needed
+      scrollTrigger: {
+        trigger: container.current, // Element triggering the animation
+        start: "bottom bottom-140", // Animation starts when element hits top center
+        end: "top bottom", // Animation ends when element is 140px below top center
+        scrub: true, // Link animation progress to scroll position
+        markers: false, // Display visual markers for debugging
+      },
+    });
 
     console.log("headerRef", headerRef.current);
 
@@ -84,7 +92,13 @@ export default function Index() {
 
   return (
     <>
-      <Header ref={headerRef} />
+      <Header
+        color={
+          "linear-gradient(130deg, rgba(233, 232, 215, 0.5) 0%, rgba(233, 232, 215, 0.8) 100%)"
+        }
+        border={"2px solid #7B523F"}
+        ref={headerRef}
+      />
       <div ref={container} className={styles.projects}>
         <div className={styles.projectDescription}>
           {" "}
@@ -119,7 +133,7 @@ export default function Index() {
         <div className={styles.imageContainer2}>
           <div className={styles.content}>
             <Image
-              src={`/images/cornice1.png`}
+              src={`/images/suing.png`}
               fill={true}
               alt="project image"
               priority={true}

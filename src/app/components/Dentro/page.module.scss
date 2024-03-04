@@ -3,134 +3,155 @@
     color: white;
     margin-top: 25vh;
     padding: 10%;
-}
-
-.projectDescription{
-    display: flex;
-    height: 700px;
-    gap: 5%;
-    font-family: 'bookmania', serif;
-    color: #121212;
-
-    .imageContainer{
-        position: relative;
-        order: 1; // Add this line to move the .imageContainer to the end
-
-        .content{
-            position: absolute;
-            top: 0;
-            right: 0;
-            
-            height: 33vw;
-            width: 44vw;
-            border: 3px solid #8C3E1C;
-            border-radius: 4px;
-        }
-        img{
-            object-fit: cover;
-            opacity: 1;
-            transition: all 0.4s;
-            height: 33vw;
-            width: 44vw;
-        }
-    }
-}
-
-.cassaScrotaleContainer{
-    display: flex;
-    flex-direction: column;
-   align-items: flex-start;
-
-    .column{
+    z-index: 1;
+    background-color: "linear-gradient(135deg, rgba(245, 190, 47, 1) 0%, rgba(245, 190, 47, 1) 100%)";
+    .projectDescription{
         display: flex;
-        align-items: flex-end;
-
-        height: 100%;
-        width: 33%;
-        font-size: 1.8vw;
-        font-weight: 700;
-        color: #8C3E1C;
-        font-family: 'bookmania', serif;
-    }
-    
-    .column:last-of-type{
-        align-items: flex-end;
-        font-size: 1.2vw;
-        color: #121212;
-        font-weight: 400;
-        width: 30%;
-    }
-
-}
-
-.sfigati{
-    display: flex;
-    .imageContainer2{
-        position: relative;
-       width: 100%;
-       display: flex;
-       justify-content: flex-end;
         height: 700px;
-        .content{
-            position: absolute;
-            top: 320px;
-            height: 33vw;
-            width: 44vw;
-            z-index: 3;
+        gap: 5%;
+        font-family: 'bookmania', serif;
+        color: #121212;
+    
+        .imageContainer{
+            position: relative;
+            order: 1; // Add this line to move the .imageContainer to the end
+    
+            .content{
+                position: absolute;
+                top: 0;
+                right: 0;
+                
+                height: 32vw;
+                width: 48vw;
+                border: 3px solid #8C3E1C;
+                border-radius: 4px;
+            }
             img{
                 object-fit: cover;
                 opacity: 1;
                 transition: all 0.4s;
+                height: 33vw;
+                width: 44vw;
             }
         }
-    
     }
-    .projectList{
+    
+    .cassaScrotaleContainer{
         display: flex;
         flex-direction: column;
-        position: relative;
-        margin-top: 200px;
-        background-color: transparent;
-        transition: all 0.2s;
-        width: 100%;
-        z-index: 0;
-        cursor: pointer;
+       align-items: flex-start;
     
-        h2 {
-            font-size: 45px;
-            margin: 0px;
-            font-weight: 400;
-            transition: all 0.4s;
-        }
-        .projectEl{
+        .column{
             display: flex;
-            width: 100%;
+            align-items: flex-end;
+    
+            height: 100%;
+            width: 33%;
+            font-size: 1.8vw;
+            font-weight: 700;
             color: #8C3E1C;
-            font-size: 3vw;
+            font-family: 'bookmania', serif;
+        }
         
-            justify-content: flex-start;
-        
-            font-family: 'monarcha', serif;
-            cursor: pointer;
-            h2{
-                margin: 0px;
-                margin-top: 40px;
-                margin-bottom: 20px;
-            }
-            
-            &:hover {
-                opacity: 0.5;
-        
-                h2 {
-                    transform: translateX(10px);
-        
-                }
-            }
+        .column:last-of-type{
+            align-items: flex-end;
+            font-size: 1.2vw;
+            color: #121212;
+            font-weight: 400;
+            width: 30%;
         }
     
     }
+    
+    .sfigati{
+        display: flex;
+        .imageContainer2{
+            position: relative;
+           width: 100%;
+           display: flex;
+           justify-content: flex-end;
+            height: 700px;
+            .content{
+                position: absolute;
+                top: 320px;
+                height: 32vw;
+                width: 48vw;
+                scale: 1.1;
+                transition: all 0.4s;
+                z-index: 3;
+                img{
+                    object-fit: cover;
+                    opacity: 1;
+                    overflow: visible;
+                }
+            }
+        
+        }
+        .projectList{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-top: 200px;
+            background-color: transparent;
+            transition: all 0.2s;
+            width: 100%;
+            z-index: 0;
+            cursor: pointer;
+        
+            h2 {
+                font-size: 45px;
+                margin: 0px;
+                font-weight: 400;
+                transition: all 0.4s;
+            }
+            .projectEl{
+                display: flex;
+                width: 100%;
+                color: #8C3E1C;
+                font-size: 3vw;
+            
+                justify-content: flex-start;
+            
+                font-family: 'monarcha', serif;
+                cursor: pointer;
+                h2{
+                    margin: 0px;
+                    margin-top: 40px;
+                    margin-bottom: 20px;
+                }
+                
+                &:hover {
+                    opacity: 0.5;
+            
+                    h2 {
+                        transform: translateX(-10px);
+            
+                    }
+                }
+            }
+        
+        }
+    
+    }
+    
+    
+    
+    
 }
+.circleContainer{
+    position: relative;
+    z-index: 3;
 
+    .circle{
+        box-shadow: 0px 60px 50px rgba(0,0,0,0.75);
+        position: absolute;
+        height: 1550%;
+        width: 120%;
+        left: -10%;
+        background-color: #FFFBDB;
+        border-radius: 0% 0% 50% 50% ;
 
+    }
+}
 
 

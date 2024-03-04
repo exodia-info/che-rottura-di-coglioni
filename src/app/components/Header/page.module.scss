@@ -5,8 +5,8 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-
-
+opacity: 0;
+transition: opacity 0.5s cubic-bezier(0.75, 0, 0.165, 1);
     .container{
     position: fixed;
     top: 30px;
@@ -17,14 +17,8 @@
     padding: 0px 0px;
     width: 100%;
     box-sizing: border-box;
-    background: linear-gradient(
-        135deg,
-        rgba(233, 232, 215, 0.5),
-                rgba(233, 232, 215, 0.8)
-      );
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-    border: 2px solid #7B523F;
 
     border-radius: .8em;
     max-width: 90vw;

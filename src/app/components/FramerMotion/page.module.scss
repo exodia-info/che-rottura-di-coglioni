@@ -1,21 +1,41 @@
 .container{
     margin-top: 10vh;
     min-height: 100vh;
+    position: relative;
+
+    .backgroundImage{
+        position: absolute;
+        display: flex;
+        top: 500px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+        img{
+            object-fit:cover;
+            width: 100%;
+            opacity: 1; ;
+            z-index: -1;
+        }
+    }
     .body{
         margin-left: 10vw;
+        transform: translateY(-10vw);
         h1{
             margin: 0px;
             margin-top: 10px;
             font-size: 5vw;
             line-height: 5vw;
-            text-transform: uppercase;
-        }
+            font-family: 'Bookmania', serif;
+            color: #D3DDE4;
+                }
+                font-weight: 700;
         p{
-            color: white;
+            color: #FFB7B7;
             margin: 0px;
             margin-top: 10px;
             font-size: 3vw;
-            text-transform: uppercase;
+            font-family: 'Monarcha', serif;
             span{
                 position: relative;
             }
@@ -23,34 +43,37 @@
     }
     .images{
         display: flex;
-        width: 100%;
         justify-content: center;
         position: relative;
         margin-top: 5vh;
         .imageContainer{
             position: absolute;
+            border: 2px solid #D3DDE4;
+            border-radius: 4px;        
             img{
                 object-fit: cover;
             }
             &:nth-of-type(1){
                 height: 60vh;
-                width: 50vh;
+                width: 80vh;
                 z-index: 1;
             }
             &:nth-of-type(2){
-                left: 55vw;
-                top: 15vh;
+                left: 60vw;
                 height: 40vh;
-                width: 30vh;
+                width: 60vh;
                 z-index: 2;
             }
             &:nth-of-type(3){
-                left: 27.5vw;
-                top: 40vh;
-                height: 25vh;
-                width: 20vh;
+                left: 20vw;
+                height: 30vh;
+                width: 40vh;
                 z-index: 3;
             }
         }
     }
+}
+
+.spacer{
+    height: 100vh;
 }

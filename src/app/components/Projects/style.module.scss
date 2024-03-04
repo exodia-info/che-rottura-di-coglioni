@@ -19,8 +19,8 @@
         .content{
             position: absolute;
             top: 0;
-            height: 33vw;
-            width: 44vw;
+            height: 32vw;
+            width: 48vw;
             border: 3px solid #7B523F;
             border-radius: 4px;
 
@@ -32,13 +32,19 @@
     .content{
         position: absolute;
         top: 320px;
-        height: 33vw;
-        width: 44vw;
+        height: 32vw;
+        width: 48vw;
+        scale: 1.1;
         z-index: 3;
+        transition: all 0.4s;
+
+
         img{
             object-fit: cover;
-            opacity: 1;
             transition: all 0.4s;
+            opacity: 1;
+            overflow:visible;
+
         }
     }
 
@@ -48,8 +54,7 @@
     object-fit: cover;
     opacity: 1;
     transition: all 0.4s;
-    height: 33vw;
-    width: 44vw;
+
 }
 
 .cassaScrotaleContainer{

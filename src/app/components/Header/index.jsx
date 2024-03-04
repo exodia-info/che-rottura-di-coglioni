@@ -1,14 +1,25 @@
 /* eslint-disable react/display-name */
+"use client";
+
 import styles from "./page.module.scss";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../ThemeProvider";
 
 const Header = React.forwardRef((props, ref) => {
+  const { color, border } = props;
   return (
-    <div ref={ref} className={styles.header}>
-      <div className={styles.container}>
+    <div
+      onMouseOver={() => console.log(color)}
+      ref={ref}
+      className={styles.header}
+    >
+      <div
+        style={{ background: color, border: border }}
+        className={styles.container}
+      >
         <div className={styles.logoContainer}>
           <div className={styles.logo}>
             <div className={styles.copyright}>©</div>

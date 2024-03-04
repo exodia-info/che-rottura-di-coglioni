@@ -10,20 +10,10 @@ import GSAP from "./components/GSAP";
 import FramerMotion from "./components/FramerMotion";
 import Gooey from "./components/Gooey";
 import Dentro from "./components/Dentro";
-
-const components = [
-  Intro,
-  Description,
-  Projects,
-  GSAP,
-  FramerMotion,
-  Gooey,
-  Dentro,
-];
+import Parallax from "./components/Parallax";
+import Scale from "./components/Scale";
 
 export default function Home() {
-  const activeRef = useRef(null);
-
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
@@ -37,9 +27,9 @@ export default function Home() {
       <Description />
       <Projects />
       <Dentro />
-      <GSAP />
+      <Scale />
       <FramerMotion />
-      <Gooey />
+      <Parallax />
     </main>
   );
 }
