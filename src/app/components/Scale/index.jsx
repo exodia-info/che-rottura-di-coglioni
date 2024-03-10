@@ -12,9 +12,7 @@ import Header from "../Header";
 import Image from "next/image";
 import styles from "./style.module.scss";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef, useLayoutEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 const Index = () => {
   const container = useRef(null);
@@ -62,49 +60,8 @@ const Index = () => {
     },
   ];
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const context = gsap.context(() => {
-      gsap.to(headerRef.current, {
-        opacity: 1, // Animate to fully visible
-        duration: 2,
-        ease: "power3.inOut", // Adjust easing as needed
-        scrollTrigger: {
-          trigger: container.current, // Element triggering the animation
-          start: "top top", // Animation   starts when element hits top center
-          end: "top+=140 top", // Animation ends when element is 140px below top center
-          scrub: true, // Link animation progress to scroll position
-          markers: true, // Display visual markers for debugging
-        },
-      });
-
-      gsap.to(headerRef.current, {
-        opacity: 0, // Animate to fully visible
-
-        ease: "power3.inOut", // Adjust easing as needed
-        scrollTrigger: {
-          trigger: container.current, // Element triggering the animation
-          start: "bottom-=140 center", // Animation starts when element hits top center
-          end: "bottom center", // Animation ends when element is 140px below top center
-          scrub: true, // Link animation progress to scroll position
-          markers: true, // Display visual markers for debugging
-        },
-      });
-      return () => {
-        context.revert();
-      };
-    }, []);
-  });
-
   return (
     <>
-      <Header
-        color={
-          "linear-gradient(130deg, rgba(211, 221, 228, 0.3) 0%, rgba(211, 221, 228, 0.7) 100%)"
-        }
-        border={"2px solid #FFB7B7"}
-        ref={headerRef}
-      />
       <div ref={container} className={styles.container}>
         <div className={styles.sticky}>
           {pictures.map(({ src, scale }, index) => (

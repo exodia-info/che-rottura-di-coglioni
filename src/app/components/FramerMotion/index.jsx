@@ -4,7 +4,7 @@ import Picture1 from "../../../../public/images/c1.jpg";
 import Picture2 from "../../../../public/images/c2.jpg";
 import Picture3 from "../../../../public/images/c3.jpg";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import ceresio from "../../../../public/images/ceresio.jpg";
 import Header from "../Header";
@@ -42,8 +42,48 @@ export default function Index() {
     },
   ];
 
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const context = gsap.context(() => {
+      gsap.to(headerRef.current, {
+        opacity: 1, // Animate to fully visible
+        duration: 2,
+        ease: "power3.inOut", // Adjust easing as needed
+        scrollTrigger: {
+          trigger: container.current, // Element triggering the animation
+          start: "top center", // Animation   starts when element hits top center
+          end: "top+=140 center", // Animation ends when element is 140px below top center
+          scrub: true, // Link animation progress to scroll position
+          markers: true, // Display visual markers for debugging
+        },
+      });
+      gsap.to(headerRef.current, {
+        opacity: 0, // Animate to fully visible
+        duration: 2,
+        ease: "power3.inOut", // Adjust easing as needed
+        scrollTrigger: {
+          trigger: container.current, // Element triggering the animation
+          start: "bottom-=140 center", // Animation starts when element hits top center
+          end: "bottom center", // Animation ends when element is 140px below top center
+          scrub: true, // Link animation progress to scroll position
+          markers: true, // Display visual markers for debugging
+        },
+      });
+      return () => {
+        context.revert();
+      };
+    }, []);
+  });
+
   return (
     <>
+      <Header
+        color={
+          "linear-gradient(130deg, rgba(211, 221, 228, 0.3) 0%, rgba(211, 221, 228, 0.7) 100%)"
+        }
+        border={"2px solid #FFB7B7"}
+        ref={headerRef}
+      />
       <motion.div style={{ y }} className={styles.container} ref={container}>
         <div className={styles.spacer}></div>
 

@@ -36,7 +36,7 @@ const Parallax = () => {
 
   return (
     <main className={styles.main}>
-      <div className={styles.spacer1} />
+      <div className={styles.spacer1}>☆ Ti Aspettiamo!! ☆ </div>
 
       <div ref={container} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y} />

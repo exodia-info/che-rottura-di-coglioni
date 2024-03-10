@@ -44,8 +44,19 @@
 
 .spacer1{
     height: 100vh;
-        border-bottom: 4px solid #7B523F;
+    background-color: rgb(6, 6, 2);
+        border-bottom: 4px solid #CEEDFF;
+        font-size: 3vw;
+        line-height: 5vw;
+        font-family: 'Bookmania', serif;
+            font-weight: 700;
+        color: #CEEDFF;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        padding-bottom: 2vw;
 }
+
 
 .spacer2{
     height: 100vh;
