@@ -32,7 +32,7 @@ font-family: 'monarcha', sans-serif;
         opacity: 0.6;
         padding: 0 35px;
         border-radius: .7em;
-        
+        cursor: pointer;
 
         &:hover{
             opacity: 1;
@@ -99,7 +99,13 @@ font-family: 'monarcha', sans-serif;
 
             .link{
                 text-decoration: none;
-                color: #333;            
+                color: #333;   
+                display: flex; 
+                img{
+                    height: 1.8em;   
+                    width: 1.8em;
+                    margin-right: .3em;
+                }  
             }
             .indicator{
                 width: 6px;

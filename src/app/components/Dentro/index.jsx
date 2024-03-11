@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useLayoutEffect, useRef, useContext } from "react";
 import styles from "./page.module.scss";
 import Image from "next/image";
@@ -31,7 +33,7 @@ export default function Index() {
   const container = useRef(null);
   const imageContainer = useRef(null);
   const elleContainer = useRef(null);
-  const headerRef = useRef(null);
+  const headerRef1 = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
@@ -66,7 +68,7 @@ export default function Index() {
       }
     );
 
-    gsap.to(headerRef.current, {
+    gsap.to(headerRef1.current, {
       opacity: 1, // Animate to fully visible
       ease: "power3.inOut", // Adjust easing as needed
       scrollTrigger: {
@@ -78,7 +80,7 @@ export default function Index() {
       },
     });
 
-    gsap.to(headerRef.current, {
+    gsap.to(headerRef1.current, {
       opacity: 0, // Animate to fully visible
 
       ease: "power3.inOut", // Adjust easing as needed
@@ -94,7 +96,7 @@ export default function Index() {
     return () => {
       context.revert();
     };
-  }, []);
+  }, [headerRef1]);
 
   return (
     <>
@@ -103,7 +105,9 @@ export default function Index() {
           "linear-gradient(130deg, rgba(183, 50, 50, 0.1) 0%, rgba(183, 50, 50, 0.4) 100%)"
         }
         border={"2px solid #8C3E1C"}
-        ref={headerRef}
+        text={"exodia.info"}
+        ref={headerRef1}
+        style={{ fontSize: "4rem" }}
       />
       <motion.div ref={container} className={styles.projects}>
         <div className={styles.projectDescription}>

@@ -30,7 +30,7 @@ export default function Index() {
   const container = useRef(null);
   const imageContainer = useRef(null);
   const elleContainer = useRef(null);
-  const headerRef = useRef(null);
+  const headerRef2 = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end start"],
@@ -56,7 +56,7 @@ export default function Index() {
       });
     });
 
-    gsap.to(headerRef.current, {
+    gsap.to(headerRef2.current, {
       opacity: 1, // Animate to fully visible
       duration: 2, // Adjust duration as needed
       ease: "power3.inOut", // Adjust easing as needed
@@ -69,7 +69,7 @@ export default function Index() {
         markers: false, // Display visual markers for debugging
       },
     });
-    gsap.to(headerRef.current, {
+    gsap.to(headerRef2.current, {
       opacity: 0, // Animate to fully visible
       duration: 2, // Adjust duration as needed
 
@@ -83,12 +83,12 @@ export default function Index() {
       },
     });
 
-    console.log("headerRef", headerRef.current);
+    console.log("headerRef", headerRef2.current);
 
     return () => {
       context.revert();
     };
-  }, [headerRef]);
+  }, [headerRef2]);
 
   return (
     <>
@@ -97,7 +97,8 @@ export default function Index() {
           "linear-gradient(130deg, rgba(233, 232, 215, 0.5) 0%, rgba(233, 232, 215, 0.8) 100%)"
         }
         border={"2px solid #7B523F"}
-        ref={headerRef}
+        text={"exodia.info"}
+        ref={headerRef2}
       />
       <div ref={container} className={styles.projects}>
         <div className={styles.projectDescription}>

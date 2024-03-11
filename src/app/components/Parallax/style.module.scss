@@ -62,3 +62,19 @@
     height: 100vh;
         border-top: 4px solid #7B523F;
 }
+
+.circleContainer{
+    position: relative;
+    z-index: 3;
+
+    .circle{
+        box-shadow: 0px 60px 50px rgba(0,0,0,0.75);
+        position: absolute;
+        height: 1550%;
+        width: 120%;
+        left: -10%;
+        background-color: #c4b22b;
+        border-radius: 0% 0% 50% 50% ;
+
+    }
+}

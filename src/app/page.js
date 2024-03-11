@@ -12,6 +12,7 @@ import Gooey from "./components/Gooey";
 import Dentro from "./components/Dentro";
 import Parallax from "./components/Parallax";
 import Scale from "./components/Scale";
+import Header from "./components/Header";
 
 export default function Home() {
   useEffect(() => {
@@ -25,6 +26,8 @@ export default function Home() {
     <main className={styles.main}>
       <Intro />
       <Description />
+      <Header />
+
       <Projects />
       <Dentro />
       <Scale />

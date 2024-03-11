@@ -82,6 +82,7 @@ export default function Index() {
           "linear-gradient(130deg, rgba(211, 221, 228, 0.3) 0%, rgba(211, 221, 228, 0.7) 100%)"
         }
         border={"2px solid #FFB7B7"}
+        text={"made with ♡"}
         ref={headerRef}
       />
       <motion.div style={{ y }} className={styles.container} ref={container}>
