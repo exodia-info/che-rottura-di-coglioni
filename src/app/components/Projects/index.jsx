@@ -8,19 +8,19 @@ import Header from "../Header";
 
 const projects = [
   {
-    title: "Salar de Atacama",
+    title: "Appena arrivati...",
     src: "casa2.jpg",
   },
   {
-    title: "Valle de la luna",
+    title: "Entrata principale",
     src: "casa1.jpg",
   },
   {
-    title: "Miscanti Lake",
+    title: "Zona barbecue",
     src: "casa3.jpg",
   },
   {
-    title: "Miniques Lagoons",
+    title: "Il vialetto",
     src: "casa4.jpg",
   },
 ];
@@ -115,18 +115,13 @@ export default function Index() {
           </div>
           <div className={styles.cassaScrotaleContainer}>
             <div className={styles.column}>
-              <h1>
-                The flora is characterized by the presence of high elevation
-                wetland, si ok un po meno
-              </h1>
+              <h1>Immersa in ampi spazi di verde a due passi da Lugano</h1>
             </div>
             <div className={styles.column}>
               <p>
-                Some, like the southern viscacha, vicuña and Darwins rhea, are
-                classified as endangered species. Others, such as Andean goose,
-                horned coot, Andean gull, puna tinamou and the three flamingo
-                species inhabiting in Chile (Andean flamingo, Chilean flamingo,
-                and Jamess flamingo) are considered vulnerable.
+                Con un grande giardino curato e immerso tra le piante, che offre
+                una veranda e una zona grill, sarà il luogo perfetto per
+                rilassarsi con amici o in famiglia
               </p>
             </div>
           </div>

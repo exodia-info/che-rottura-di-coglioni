@@ -25,7 +25,7 @@ const Index = () => {
   const y = useTransform(scrollYProgress, [0, 1], [-750, 0]);
 
   return (
-    <motion.div ref={container} className={styles.contact}>
+    <motion.div id="footer" ref={container} className={styles.contact}>
       <div className={styles.stack}>
         Made with:
         <div className={styles.carousel}>
@@ -141,13 +141,23 @@ const Index = () => {
               />
             </motion.svg> */}
         </div>
-        <div className={styles.nav}>
-          {/* <Button className={styles.button}>
-            <p>bianchinmauro2.0@gmail.com</p>
-          </Button>
-          <Button className={styles.button}>
-            <p>+39 338 747 2708</p>
-          </Button> */}
+
+        <div className="flex">
+          <div className={styles.nav}>
+            <div className={styles.contatto}>
+              <h1>Marcella & Danilo</h1>
+
+              <p>bdanilo@tiscali.it</p>
+              <p>+39 335 653 9989</p>
+              <p>+39 344 296 2107</p>
+            </div>
+            <div className={styles.contatto}>
+              <h1>Developer</h1>
+
+              <p>bianchinmauro2.0@gmail.com</p>
+              <p>+39 338 747 2708</p>
+            </div>
+          </div>
         </div>
         <div className={styles.info}>
           <div>

@@ -4,7 +4,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 
 export default function Description() {
-  const phrases = ["vormgeven", "ontwerpen", "creëren", "ontwikkelen"];
+  const phrases = ["Wi-Fi", "TV", "Giochi da tavolo", "Veranda"];
 
   return (
     <section className={styles.section}>

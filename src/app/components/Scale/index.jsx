@@ -1,11 +1,11 @@
 "use client";
 
-import Picture1 from "../../../../public/images/porto.jpg";
-import Picture2 from "../../../../public/images/quadrato1.jpg";
-import Picture3 from "../../../../public/images/altra.jpg";
-import Picture4 from "../../../../public/images/quadrato3.jpg";
-import Picture5 from "../../../../public/images/quadrato4.jpg";
-import Picture6 from "../../../../public/images/verticale.jpg";
+import Picture1 from "../../../../public/images/porto2.jpg";
+import Picture2 from "../../../../public/images/porto.jpg";
+import Picture3 from "../../../../public/images/verticale.jpg";
+import Picture4 from "../../../../public/images/quadrato4.jpg";
+import Picture5 from "../../../../public/images/quadrato3.jpg";
+import Picture6 from "../../../../public/images/quadrato1.jpg";
 import Picture7 from "../../../../public/images/quadrato2.jpg";
 import Header from "../Header";
 

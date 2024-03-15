@@ -66,7 +66,7 @@ export default function Intro() {
           <Image src="/images/logus.png" alt="logus" fill="true" />
         </div>
         <h1 ref={introTxt} data-scroll data-scroll-speed="0.7">
-          Wij ii een creatief bureau
+          Vieni a visitarci!
         </h1>
       </div>
     </section>

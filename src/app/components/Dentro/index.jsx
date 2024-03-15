@@ -11,19 +11,19 @@ import Cornice from "../../../../public/images/suing.png";
 
 const projects = [
   {
-    title: "Salar de Atacama",
+    title: "Zona camino",
     src: "dentro1.jpg",
   },
   {
-    title: "Valle de la luna",
+    title: "Living room",
     src: "dentro2.jpg",
   },
   {
-    title: "Miscanti Lake",
+    title: "Zona televisione",
     src: "dentro3.jpg",
   },
   {
-    title: "Miniques Lagoons",
+    title: "Camera matrimoniale",
     src: "dentro4.jpg",
   },
 ];
@@ -89,7 +89,7 @@ export default function Index() {
         start: "bottom-=140 center", // Animation starts when element hits top center
         end: "bottom center", // Animation ends when element is 140px below top center
         scrub: true, // Link animation progress to scroll position
-        markers: true, // Display visual markers for debugging
+        markers: false, // Display visual markers for debugging
       },
     });
 
@@ -125,17 +125,15 @@ export default function Index() {
           <div className={styles.cassaScrotaleContainer}>
             <div className={styles.column}>
               <h1>
-                The flora is characterized by the presence of high elevation
-                wetland, si ok un po meno
+                {`Spaziosi e accoglienti interni in un'atmosfera mite e confortevole `}
               </h1>
             </div>
             <div className={styles.column}>
               <p>
-                Some, like the southern viscacha, vicuña and Darwins rhea, are
-                classified as endangered species. Others, such as Andean goose,
-                horned coot, Andean gull, puna tinamou and the three flamingo
-                species inhabiting in Chile (Andean flamingo, Chilean flamingo,
-                and Jamess flamingo) are considered vulnerable.
+                Tradizionali interni con arredi in legno che ancora raccontano
+                la storia di una casa, ma integrati con comodità ed elementi
+                moderni. In un ampio spazio interno potrete rilassarvi
+                scaldandovi vicino al camino oppure guardando la televisione.
               </p>
             </div>
           </div>

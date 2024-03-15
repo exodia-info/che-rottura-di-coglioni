@@ -11,7 +11,7 @@ import Header from "../Header";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const word = "with framer motion";
+const word = "concediti  una  serata  al  lago";
 
 export default function Index() {
   const container = useRef(null);
@@ -54,7 +54,7 @@ export default function Index() {
           start: "top center", // Animation   starts when element hits top center
           end: "top+=140 center", // Animation ends when element is 140px below top center
           scrub: true, // Link animation progress to scroll position
-          markers: true, // Display visual markers for debugging
+          markers: false, // Display visual markers for debugging
         },
       });
       gsap.to(headerRef.current, {
@@ -66,7 +66,7 @@ export default function Index() {
           start: "bottom-=140 center", // Animation starts when element hits top center
           end: "bottom center", // Animation ends when element is 140px below top center
           scrub: true, // Link animation progress to scroll position
-          markers: true, // Display visual markers for debugging
+          markers: false, // Display visual markers for debugging
         },
       });
       return () => {
@@ -96,12 +96,12 @@ export default function Index() {
           />
         </div>
         <div className={styles.body}>
-          <motion.h1 style={{ y: sm }}>Parallax</motion.h1>
-          <motion.h1 style={{ y: sm }}>Scroll</motion.h1>
+          <motion.h1 style={{ y: sm }}>Visita</motion.h1>
+          <motion.h1 style={{ y: sm }}>Porto Ceresio</motion.h1>
           <div className={styles.word}>
             <p>
               {word.split("").map((letter, i) => {
-                const rd = Math.floor(Math.random() * -125) - 25;
+                const rd = Math.floor(Math.random() * -95) - 25;
                 // eslint-disable-next-line react-hooks/rules-of-hooks
                 const sm = useTransform(scrollYProgress, [0, 1], [0, rd]);
                 return (

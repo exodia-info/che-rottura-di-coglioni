@@ -44,7 +44,7 @@ const Header = React.forwardRef((props, ref) => {
           </div>
 
           <div className={styles.el}>
-            <Link className={styles.link} href="/description">
+            <Link className={styles.link} href="#footer">
               <Image src={phone2} alt="phone" />
               <p>Contattaci</p>
             </Link>
