@@ -6,10 +6,12 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useContext } from "react";
-import { ThemeContext } from "../../ThemeProvider";
+import { useTranslation } from "react-i18next";
 import home from "../../../../public/images/home.png";
 import phone2 from "../../../../public/images/phone2.png";
 import Image from "next/image";
+import Switch from "../Switch";
+import { t } from "i18next";
 
 const Header = React.forwardRef((props, ref) => {
   const { color, border, text } = props;
@@ -32,11 +34,12 @@ const Header = React.forwardRef((props, ref) => {
             </div>
           </div>
         </div>
+        <div className={styles.el}></div>
         <div className={styles.nav}>
           <div className={styles.el}>
             <Link className={styles.link} href="/">
               <div className={styles.home}>
-                <Image src={home} alt="home" />
+                <Image src={home} alt="home" placeholder="blur" />
               </div>
               <p>Home</p>
             </Link>
@@ -45,10 +48,13 @@ const Header = React.forwardRef((props, ref) => {
 
           <div className={styles.el}>
             <Link className={styles.link} href="#footer">
-              <Image src={phone2} alt="phone" />
-              <p>Contattaci</p>
+              <Image src={phone2} alt="phone" placeholder="blur" />
+              <p>{t("contattaci")}</p>
             </Link>
             <div className={styles.indicator}></div>
+          </div>
+          <div className={styles.el}>
+            <Switch />
           </div>
         </div>
       </div>

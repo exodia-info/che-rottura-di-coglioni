@@ -6,13 +6,14 @@ import { useEffect, useRef } from "react";
 import Intro from "./components/Intro";
 import Description from "./components/Description";
 import Projects from "./components/Projects";
-import GSAP from "./components/GSAP";
 import FramerMotion from "./components/FramerMotion";
 import Gooey from "./components/Gooey";
 import Dentro from "./components/Dentro";
 import Parallax from "./components/Parallax";
 import Scale from "./components/Scale";
 import Header from "./components/Header";
+import Switch from "./components/Switch";
+import i18n from "./i18n";
 
 export default function Home() {
   useEffect(() => {
@@ -27,7 +28,6 @@ export default function Home() {
       <Intro />
       <Description />
       <Header />
-
       <Projects />
       <Dentro />
       <Scale />

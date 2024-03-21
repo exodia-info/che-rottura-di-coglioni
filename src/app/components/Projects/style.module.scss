@@ -98,37 +98,35 @@
     cursor: pointer;
 
     h2 {
-        font-size: 45px;
+        font-size: 2em;
         margin: 0px;
         font-weight: 400;
         transition: all 0.4s;
     }
+    .projectEl{
+        display: flex;
+        width: 100%;
+        color: #583f32;
     
-
-}
-
-.projectEl{
-    display: flex;
-    width: 100%;
-    color: #583f32;
-    font-size: 3vw;
-
-    justify-content: flex-end;
-
-    font-family: 'monarcha', serif;
-    cursor: pointer;
+        justify-content: flex-end;
     
-    &:hover {
-        opacity: 0.5;
-
-        h2 {
-            transform: translateX(10px);
-
+        font-family: 'monarcha', serif;
+        cursor: pointer;
+        h2{
+            margin: 0px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        &:hover {
+            opacity: 0.5;
+    
+            h2 {
+                transform: translateX(10px);
+    
+            }
         }
     }
 }
-.projectEl h2{
-    margin: 0px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
+
+
+

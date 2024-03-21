@@ -2,9 +2,11 @@ import styles from "./style.module.scss";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Description() {
-  const phrases = ["Wi-Fi", "TV", "Giochi da tavolo", "Veranda"];
+  const { t, i18n } = useTranslation();
+  const phrases = t("array", { returnObjects: true });
 
   return (
     <section className={styles.section}>

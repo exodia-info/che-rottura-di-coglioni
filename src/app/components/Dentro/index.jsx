@@ -8,27 +8,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Header from "../Header";
 import Cornice from "../../../../public/images/suing.png";
-
-const projects = [
-  {
-    title: "Zona camino",
-    src: "dentro1.jpg",
-  },
-  {
-    title: "Living room",
-    src: "dentro2.jpg",
-  },
-  {
-    title: "Zona televisione",
-    src: "dentro3.jpg",
-  },
-  {
-    title: "Camera matrimoniale",
-    src: "dentro4.jpg",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Index() {
+  const { t, i18n } = useTranslation();
+  const projects = t("array3", { returnObjects: true });
+
   const [selectedProject, setSelectedProject] = useState(0);
   const container = useRef(null);
   const imageContainer = useRef(null);
@@ -107,7 +92,6 @@ export default function Index() {
         border={"2px solid #8C3E1C"}
         text={"exodia.info"}
         ref={headerRef1}
-        style={{ fontSize: "4rem" }}
       />
       <motion.div ref={container} className={styles.projects}>
         <div className={styles.projectDescription}>
@@ -116,7 +100,7 @@ export default function Index() {
               <Image
                 src={`/images/${projects[selectedProject].src}`}
                 fill
-                alt="immagini 1"
+                alt="hey"
                 priority={true}
               />
             </div>
@@ -124,17 +108,10 @@ export default function Index() {
 
           <div className={styles.cassaScrotaleContainer}>
             <div className={styles.column}>
-              <h1>
-                {`Spaziosi e accoglienti interni in un'atmosfera mite e confortevole `}
-              </h1>
+              <h1>{t("internoTitolo")}</h1>
             </div>
             <div className={styles.column}>
-              <p>
-                Tradizionali interni con arredi in legno che ancora raccontano
-                la storia di una casa, ma integrati con comodità ed elementi
-                moderni. In un ampio spazio interno potrete rilassarvi
-                scaldandovi vicino al camino oppure guardando la televisione.
-              </p>
+              <p>{t("internoDescrizione")}</p>
             </div>
           </div>
         </div>

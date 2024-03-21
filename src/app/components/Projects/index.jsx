@@ -4,28 +4,14 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import Header from "../Header";
 
-const projects = [
-  {
-    title: "Appena arrivati...",
-    src: "casa2.jpg",
-  },
-  {
-    title: "Entrata principale",
-    src: "casa1.jpg",
-  },
-  {
-    title: "Zona barbecue",
-    src: "casa3.jpg",
-  },
-  {
-    title: "Il vialetto",
-    src: "casa4.jpg",
-  },
-];
-
 export default function Index() {
+  const { t, i18n } = useTranslation();
+  const projects = t("array2", { returnObjects: true });
+
   const [selectedProject, setSelectedProject] = useState(0);
   const container = useRef(null);
   const imageContainer = useRef(null);
@@ -115,14 +101,10 @@ export default function Index() {
           </div>
           <div className={styles.cassaScrotaleContainer}>
             <div className={styles.column}>
-              <h1>Immersa in ampi spazi di verde a due passi da Lugano</h1>
+              <h1>{t("esternoTitolo")}</h1>
             </div>
             <div className={styles.column}>
-              <p>
-                Con un grande giardino curato e immerso tra le piante, che offre
-                una veranda e una zona grill, sarà il luogo perfetto per
-                rilassarsi con amici o in famiglia
-              </p>
+              <p>{t("esternoDescrizione")}</p>
             </div>
           </div>
         </div>
