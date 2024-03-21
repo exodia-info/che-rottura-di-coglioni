@@ -53,9 +53,6 @@ const Header = React.forwardRef((props, ref) => {
             </Link>
             <div className={styles.indicator}></div>
           </div>
-          <div className={styles.el}>
-            <Switch />
-          </div>
         </div>
       </div>
     </div>
