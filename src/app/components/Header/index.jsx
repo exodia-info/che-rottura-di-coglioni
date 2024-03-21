@@ -11,10 +11,10 @@ import home from "../../../../public/images/home.png";
 import phone2 from "../../../../public/images/phone2.png";
 import Image from "next/image";
 import Switch from "../Switch";
-import { t } from "i18next";
 
 const Header = React.forwardRef((props, ref) => {
   const { color, border, text } = props;
+  const { t, i18n } = useTranslation();
   return (
     <div
       onMouseOver={() => console.log(color)}

@@ -11,9 +11,84 @@ import vercel from "../../../../public/images/vercel.png";
 import github from "../../../../public/images/github.png";
 import framer from "../../../../public/images/framer-motion.png";
 import gsap from "../../../../public/images/gsao.png";
+import { useTranslation } from "react-i18next";
+
+const Stack = () => {
+  return (
+    <div className={styles.stack}>
+      Made with:
+      <div className={styles.carousel}>
+        <div className={styles.icon}>
+          <Image
+            fill={true}
+            objectFit="contain"
+            alt={"image"}
+            src={next}
+            placeholder="blur"
+          />
+        </div>
+        <div className={styles.icon}>
+          <Image
+            fill={true}
+            objectFit="contain"
+            alt={"image"}
+            src={react}
+            placeholder="blur"
+          />
+        </div>
+        <div className={styles.icon}>
+          <Image
+            fill={true}
+            objectFit="contain"
+            alt={"image"}
+            src={sass}
+            placeholder="blur"
+          />
+        </div>
+        <div className={styles.icon}>
+          <Image
+            fill={true}
+            objectFit="contain"
+            alt={"image"}
+            src={framer}
+            placeholder="blur"
+          />
+        </div>
+        <div className={styles.icon}>
+          <Image
+            fill={true}
+            objectFit="contain"
+            alt={"image"}
+            src={gsap}
+            placeholder="blur"
+          />
+        </div>
+        <div className={styles.icon}>
+          <Image
+            fill={true}
+            objectFit="contain"
+            alt={"image"}
+            src={vercel}
+            placeholder="blur"
+          />
+        </div>
+        <div className={styles.icon}>
+          <Image
+            fill={true}
+            objectFit="contain"
+            alt={"image"}
+            src={github}
+            placeholder="blur"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Index = () => {
   const container = useRef(null);
+  const { t, i18n } = useTranslation();
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -21,79 +96,10 @@ const Index = () => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [140, 90]);
-  const y = useTransform(scrollYProgress, [0, 1], [-750, 0]);
 
   return (
     <motion.div id="footer" ref={container} className={styles.contact}>
-      <div className={styles.stack}>
-        Made with:
-        <div className={styles.carousel}>
-          <div className={styles.icon}>
-            <Image
-              fill={true}
-              objectFit="contain"
-              alt={"image"}
-              src={next}
-              placeholder="blur"
-            />
-          </div>
-          <div className={styles.icon}>
-            <Image
-              fill={true}
-              objectFit="contain"
-              alt={"image"}
-              src={react}
-              placeholder="blur"
-            />
-          </div>
-          <div className={styles.icon}>
-            <Image
-              fill={true}
-              objectFit="contain"
-              alt={"image"}
-              src={sass}
-              placeholder="blur"
-            />
-          </div>
-          <div className={styles.icon}>
-            <Image
-              fill={true}
-              objectFit="contain"
-              alt={"image"}
-              src={framer}
-              placeholder="blur"
-            />
-          </div>
-          <div className={styles.icon}>
-            <Image
-              fill={true}
-              objectFit="contain"
-              alt={"image"}
-              src={gsap}
-              placeholder="blur"
-            />
-          </div>
-          <div className={styles.icon}>
-            <Image
-              fill={true}
-              objectFit="contain"
-              alt={"image"}
-              src={vercel}
-              placeholder="blur"
-            />
-          </div>
-          <div className={styles.icon}>
-            <Image
-              fill={true}
-              objectFit="contain"
-              alt={"image"}
-              src={github}
-              placeholder="blur"
-            />
-          </div>
-        </div>
-      </div>
+      <Stack />
 
       <div className={styles.body}>
         <div className={styles.title}>
@@ -104,7 +110,7 @@ const Index = () => {
               justifyContent: "space-between",
             }}
           >
-            <h2>Contattaci</h2>
+            <h2>{t("contattaci")}</h2>
             <div className={styles.imageContainer}>
               <Image fill={true} alt={"image"} src={`/images/logus.png`} />
             </div>
