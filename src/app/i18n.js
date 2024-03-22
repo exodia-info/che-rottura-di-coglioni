@@ -65,7 +65,7 @@ i18n.use(initReactI18next).init({
           },
         ],
         lagoTitolo: "Visita",
-        lagoAgo: "concediti  una  serata  al  lago",
+        lagoAgo: "e concediti  una  serata  al  lago",
         aspetto: "Ti Aspettiamo",
         contattaci: "Contattaci",
       },
@@ -74,9 +74,10 @@ i18n.use(initReactI18next).init({
       translation: {
         welcome: "Come and visit us!",
         array: ["Wi-Fi", "TV", "Board games", "Veranda"],
-        esternoTitolo: "suca",
+        esternoTitolo:
+          "Immersed in large green spaces a stone's throw from Porto Ceresio",
         esternoDescrizione:
-          "Con un grande giardino curato e immerso tra le piante, che offre una veranda e una zona grill, sarà il luogo perfetto per rilassarsi con amici o in famiglia",
+          "The house offers a large well-kept garden full of plants, in which you can find a veranda and a grill area, it will be the perfect place to relax and have barbecues under the sun with friends or family.",
         array2: [
           {
             title: "As you arrive...",
@@ -97,12 +98,12 @@ i18n.use(initReactI18next).init({
         ],
 
         internoTitolo:
-          "Spaziosi e accoglienti interni in un'atmosfera mite e confortevole",
+          "Spacious and welcoming interiors in a mild and comfortable atmosphere",
         internoDescrizione:
-          "Tradizionali interni con arredi in legno che ancora raccontano la storia di una casa, ma integrati con comodità ed elementi moderni. In un ampio spazio interno potrete rilassarvi scaldandovi vicino al camino oppure guardando la televisione.",
+          "Traditional interiors with wooden furnishings that still tell the story of a home, but integrated with comfort and modern elements. In a large internal space you can relax by warming yourself near the fireplace or watching television.",
         array3: [
           {
-            title: "Zona camino",
+            title: "Fireplace area",
             src: "dentro1.jpg",
           },
           {
@@ -110,16 +111,24 @@ i18n.use(initReactI18next).init({
             src: "dentro2.jpg",
           },
           {
-            title: "Zona televisione",
+            title: "Televison area",
             src: "dentro3.jpg",
           },
           {
-            title: "Camera matrimoniale",
+            title: "Double room",
             src: "dentro4.jpg",
           },
+          {
+            title: "Second double room",
+            src: "dentro5.jpg",
+          },
+          {
+            title: "Single beds room",
+            src: "dentro6.jpg",
+          },
         ],
-        lagoTitolo: "Visita",
-        lagoAgo: "concediti  una  serata  al  lago",
+        lagoTitolo: "Visit",
+        lagoAgo: "and treat yourself with one night at the lake",
         aspetto: "See you soon",
         contattaci: "Contact us",
       },

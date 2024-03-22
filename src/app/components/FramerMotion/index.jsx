@@ -10,10 +10,11 @@ import ceresio from "../../../../public/images/ceresio.jpg";
 import Header from "../Header";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-const word = "concediti  una  serata  al  lago";
+import { useTranslation } from "react-i18next";
 
 export default function Index() {
+  const { t, i18n } = useTranslation();
+  const word = "Porto  Ceresio";
   const container = useRef(null);
   const headerRef = useRef(null);
 
@@ -87,7 +88,6 @@ export default function Index() {
       />
       <motion.div style={{ y }} className={styles.container} ref={container}>
         <div className={styles.spacer}></div>
-
         <div className={styles.backgroundImage}>
           <Image
             src="/images/ceresio.jpg"
@@ -96,8 +96,8 @@ export default function Index() {
           />
         </div>
         <div className={styles.body}>
-          <motion.h1 style={{ y: sm }}>Visita</motion.h1>
-          <motion.h1 style={{ y: sm }}>Porto Ceresio</motion.h1>
+          <motion.h1 style={{ y: sm }}>{t("lagoTitolo")}</motion.h1>
+          <motion.h1 style={{ y: sm }}></motion.h1>
           <div className={styles.word}>
             <p>
               {word.split("").map((letter, i) => {
@@ -112,6 +112,7 @@ export default function Index() {
               })}
             </p>
           </div>
+          <div className={styles.ago}>{t("lagoAgo")}</div>
         </div>
         <div className={styles.images}>
           {images.map(({ src, parallax }, i) => {

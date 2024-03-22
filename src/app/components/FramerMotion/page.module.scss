@@ -28,17 +28,26 @@
             line-height: 5vw;
             font-family: 'Bookmania', serif;
             color: #D3DDE4;
+            font-weight: 700;
                 }
-                font-weight: 700;
+                
         p{
             color: #FFB7B7;
             margin: 0px;
             margin-top: 10px;
             font-size: 3vw;
             font-family: 'Monarcha', serif;
+            font-weight: 700;
+
             span{
                 position: relative;
             }
+        }
+        .ago{
+            color: #D3DDE4;
+            font-size: 1.4vw;
+            font-family: 'Monarcha', serif;
+            font-weight: 600;
         }
     }
     .images{

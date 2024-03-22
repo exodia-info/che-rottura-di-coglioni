@@ -115,24 +115,7 @@ const Index = () => {
               <Image fill={true} alt={"image"} src={`/images/logus.png`} />
             </div>
           </span>
-          <motion.div
-            onClick={() => {
-              console.log("clicked");
-              toast.success("Here is another toast 🍞", {
-                style: {
-                  borderRadius: "10px",
-                  background: "rgb(255 246 223)",
-                  color: "#333",
-                },
-              });
-            }}
-            style={{ x }}
-            className={styles.buttonContainer}
-          >
-            {/* <Button backgroundColor={"#334BD3"} className={styles.button}>
-              <p>Get another toast</p>
-            </Button> */}
-          </motion.div>
+
           {/* <motion.svg
               style={{ rotate, scale: 3 }}
               width={"9"}

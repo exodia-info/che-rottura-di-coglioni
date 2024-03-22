@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTransform, useScroll, motion } from "framer-motion";
 import { useRef } from "react";
 import useDimension from "../useDimension";
+import { useTranslation } from "react-i18next";
 
 const images = [
   "img1.jpg",
@@ -22,6 +23,7 @@ const images = [
 ];
 
 const Parallax = () => {
+  const { t, i18n } = useTranslation();
   const container = useRef(null);
   const { height } = useDimension();
   const { scrollYProgress } = useScroll({
@@ -37,7 +39,7 @@ const Parallax = () => {
 
   return (
     <main className={styles.main}>
-      <div className={styles.spacer1}>☆ Ti Aspettiamo! ☆ </div>
+      <div className={styles.spacer1}>☆ {t("aspetto")}! ☆ </div>
 
       <div ref={container} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y} />
