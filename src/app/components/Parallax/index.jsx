@@ -16,8 +16,8 @@ const images = [
   "img6.jpg",
   "img7.jpg",
   "img8.jpg",
-  "img9.jpg",
-  "img10.jpg",
+  "img12.jpg",
+  "dentro4.jpg",
   "img11.jpg",
   "img12.jpg",
 ];

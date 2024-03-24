@@ -7,7 +7,7 @@ import { ThemeProvider } from "./ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Magica Dama",
+  title: "Magica DaMa",
   description:
     "La storia di una villa grande e confortevole nel verde di Besano, nei pressi di Porto Ceresio",
 };
