@@ -10,6 +10,7 @@ import FramerMotion from "./components/FramerMotion";
 import Gooey from "./components/Gooey";
 import Dentro from "./components/Dentro";
 import Parallax from "./components/Parallax";
+import Parallax2 from "./components/Parallax2";
 import Scale from "./components/Scale";
 import Header from "./components/Header";
 import Switch from "./components/Switch";
@@ -33,6 +34,7 @@ export default function Home() {
       <Scale />
       <FramerMotion />
       <Parallax />
+      <Parallax2 />
     </main>
   );
 }

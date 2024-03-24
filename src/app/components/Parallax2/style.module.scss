@@ -1,0 +1,85 @@
+.pippo {
+  background-color: #ceedff;
+}
+
+.scritta {
+  position: absolute;
+}
+
+.gallery {
+  height: 175vh;
+  background-color: #d6eebb;
+  display: flex;
+  gap: 2vw;
+  padding: 2vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  .column {
+    width: 25%;
+    height: 100%;
+    gap: 2vw;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    position: relative;
+    .imageContainer {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      border-radius: 1vw;
+      overflow: hidden;
+      border: 3px solid #7b523f;
+
+      img {
+        object-fit: cover;
+      }
+    }
+    &:nth-of-type(1) {
+      top: -45%;
+    }
+    &:nth-of-type(2) {
+      top: -95%;
+    }
+    &:nth-of-type(3) {
+      top: -45%;
+    }
+    &:nth-of-type(4) {
+      top: -75%;
+    }
+  }
+}
+
+.spacer1 {
+  height: 100vh;
+  background-color: rgb(6, 6, 2);
+  border-bottom: 4px solid #ceedff;
+  font-size: 3vw;
+  line-height: 5vw;
+  font-family: "Bookmania", serif;
+  font-weight: 700;
+  color: #ceedff;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 2vw;
+}
+
+.spacer2 {
+  height: 100vh;
+  border-top: 4px solid #7b523f;
+}
+
+.circleContainer {
+  position: relative;
+  z-index: 3;
+
+  .circle {
+    box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.75);
+    position: absolute;
+    height: 1550%;
+    width: 120%;
+    left: -10%;
+    background-color: #c4b22b;
+    border-radius: 0% 0% 50% 50%;
+  }
+}
